@@ -59,11 +59,11 @@ if __name__ == "__main__":
 			leftResultPath = ""
 			rightResultPath = ""
 			if flag:
-				leftResultPath = "results_intensity_enhanced/" + root.split('/')[1] + "_disp1_SSD.png";
-				rightResultPath = "results_intensity_enhanced/" + root.split('/')[1] + "_disp5_SSD.png";
+				leftResultPath = "results_intensity_enhanced/" + root.split('/')[1] + "_disp1_NCC.png";
+				rightResultPath = "results_intensity_enhanced/" + root.split('/')[1] + "_disp5_NCC.png";
 			else:
-				leftResultPath = "results/" + root.split('/')[1] + "_disp1_SSD.png";
-				rightResultPath = "results/" + root.split('/')[1] + "_disp5_SSD.png";
+				leftResultPath = "results/" + root.split('/')[1] + "_disp1_ASW.png";
+				rightResultPath = "results/" + root.split('/')[1] + "_disp5_ASW.png";
 			leftResultImage = Image.open(leftResultPath).convert('L');
 			rightResultImage = Image.open(rightResultPath).convert('L');
 			pool.apply_async(computeBadPixel, (im[0], im[1], leftResultImage, rightResultImage, leftResultPath, rightResultPath))
